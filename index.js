@@ -1,10 +1,14 @@
-const express = require("express");
-const morgan = require("morgan");
+import express from "express";
+import morgan from "morgan";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const products = [
   { id: 1, title: "product1" },
   { id: 2, title: "product2" },
 ];
+
 const app = express();
 app.use(morgan("dev"));
 
@@ -13,8 +17,9 @@ app.get("/products", (req, res) => {
 });
 
 app.get("/products/:productID", (req, res) => {
-  // req.params.productID
+  //   const productID = req.params.productID
   const { productID } = req.params;
+  console.log(productID);
   //   const foundProduct = products.find((product) => product.id == productID);
   //   const foundProduct = products.find((product) => product.id === +productID);
   //   const foundProduct = products.find((product) => product.id === Number(productID));
@@ -24,7 +29,7 @@ app.get("/products/:productID", (req, res) => {
   res.json(foundProduct);
 });
 
-const port = 3000;
+const port = process.env.PORT;
 
 app.listen(port, (error) => {
   if (error) {
