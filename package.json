@@ -1,0 +1,19 @@
+{
+  "name": "recap-express-intro",
+  "version": "1.0.0",
+  "description": "- create an empty folder\r - run `npm init -y` make the folder node environment\r - run `git init` and then create a `.gitignore` file in the root directory\r - add `node_modules` to the `.gitignore` list\r - add `.env` to the `.gitignore` list",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "express": "^4.21.1",
+    "morgan": "^1.10.0"
+  }
+}
